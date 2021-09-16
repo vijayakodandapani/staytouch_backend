@@ -1,0 +1,23 @@
+{
+  "name": "staytouch",
+  "version": "1.0.0",
+  "description": "s3 Upload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "start": "npm start"
+  },
+  "author": "Vijay",
+  "license": "ISC",
+  "dependencies": {
+    "aws-cli-js": "^2.2.3",
+    "aws-sdk": "^2.989.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
+  }
+}

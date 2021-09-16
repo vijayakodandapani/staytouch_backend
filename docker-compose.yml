@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 'krify@123'
+    volumes:
+      - database_data:/var/lib/postgresql/data
+
+  api:
+    build: ./api
+    expose:
+      - 8080
+    ports:
+      - 1010:1010
+    volumes:
+      - ./api:/usr/src/app/
+    links:
+      - db
+    environment:
+      - PGHOST: 'db'
+      - PGDATABASE: 'postgres'
+      - PGUSER: 'postgres'
+      - PGPASSWORD: 'postgres'
+
+
+volumes:
+  database_data:
+    driver: local
